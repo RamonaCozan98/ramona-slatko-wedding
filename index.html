@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramona & Slatko</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Ramona & Slatko</a>
+                <div class="menu-toggle">☰</div> <!-- Buton pentru meniul pe mobil -->
+            </div>
+            
+            <!-- Meniul principal de navigare -->
+            <ul class="nav-links">
+                <li><a href="#home" class="menu-item" data-lang="home">Home</a></li>
+                <li><a href="#story" class="menu-item" data-lang="story">Story</a></li>
+                <li><a href="#when-where" class="menu-item" data-lang="when">When & Where</a></li>
+                <li><a href="#confirmation" class="menu-item" data-lang="confirmation">Confirmation</a></li>
+            </ul>
+
+            <!-- Buton pentru schimbarea limbii -->
+            <select class="language-select" id="language-select">
+                <option value="ro">Română</option>
+                <option value="cz">Čeština</option>
+            </select>
+        </nav>
+    </header>
+
+    <!-- Secțiune de imagini slider -->
+    <section id="home" class="slider">
+        <div class="slider-container">
+            <div class="slides">
+                
+                <div class="slide">
+                    <div class="image-container">
+                        <img src="images/image1.jpeg" alt="Image1">
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="image-container">
+                        <img src="images/image2.jpeg" alt="Image2">
+                    </div>
+                </div>
+            
+                <div class="slide">
+                    <div class="image-container">
+                        <img src="images/image3.jpeg" alt="Image3">
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="image-container">
+                        <img src="images/image4.jpeg" alt="Image4">
+                    </div>
+                </div>
+                
+                <div class="slide">
+                    <div class="image-container">
+                        <img src="images/image5.jpeg" alt="Image5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buline pentru schimbarea imaginii -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectiunea „Povestea noastra”  -->
+    <section id="story" class="story">
+        <div class="story-box">
+            <h3 class="story-heading" data-lang="storyheading">ÎMPREUNĂ DE 4 ANI</h3>
+            <h1 class="story-main-title" data-lang="storymaintitle">DOUĂ SUFLETE PERECHE</h1>
+            <p class="story-text" data-lang="paragraph1">Au fost odată ca niciodată doi străini, fiecare purtându-și propriile vise, dar, cumva, meniți să se intersecteze. Ceea ce a început ca simple conversații s-a transformat în râsete, povești și o legătură tot mai puternică, pe care nu o puteam ignora.</p>
+            <p class="story-text" data-lang="paragraph2">Pe măsură ce anotimpurile s-au schimbat, la fel am făcut și noi — găsind putere în bunătatea celuilalt și îndrăgostindu-ne tot mai mult, zi după zi. Prin fiecare reușită și fiecare provocare, am descoperit că iubirea adevărată înseamnă sprijin, răbdare și bucuria de a trăi împreună momentele simple.</p> 
+            <p class="story-text" data-lang="paragraph3">Cu mult drag, vă invităm să faceți parte din povestea noastră și să trăiți, alături de noi, cele mai speciale momente din viața noastră! ❤️</p>
+        </div>
+    </section>
+
+    <!-- Prima imagine in paralaxa  -->
+    <section class="parallax-container">
+        <img class="parallax-img" src="images/parallax1.jpeg" alt="Imagine"/>
+    </section>
+
+    <!-- Sectiunea „When & Where” -->
+    <section id="when-where" class="when-where">
+        
+        <div class="container-heading">
+            <h1 class="story-main-title" data-lang="storymaintitle2">VOM SĂRBĂTORI IUBIREA NOASTRĂ</h1>
+        </div>
+
+        <div class="container-location">
+            <!-- Secțiunea pentru Cununia Civila -->
+            <div class="location-columns">
+                <div class="location-box">
+                    <h3 class="location-title" data-lang="locationtitlecivileceremony">CUNUNIA CIVILĂ</h3>
+                    <h3 class="location-city">VATRA DORNEI</h3>
+                    <h3 class="location-date" data-lang="civileceremonydate">06 IUNIE 2026</h3>
+                
+                    <!-- Secțiunea pentru Primarie -->
+                    <div class="location-details">
+                        <img src="images/primarie.gif" alt="Primărie" class="location-image">
+                        <div class="location-info">
+                            <p><strong data-lang="civilceremonytime">Ora: 16:00</strong></p>
+                            <p><strong data-lang="civilceremonylocation">Locație: Primăria Vatra Dornei</strong></p>
+                            <p><a href="https://www.google.com/maps?sca_esv=6a2c331ba288be79&rlz=1C1GCEA_enRO971RO971&sxsrf=AHTn8zpHoVRj7rCF6wCuAo6it9SrkCU0vg:1744546780815&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5wcmltYXJpYSB2YXRyYSoCCAAyCxAuGIAEGMcBGK8BMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUiqK1AAWMMjcAV4AZABAJgBlQOgAYQWqgEKMC4xNC4xLjEuMbgBA8gBAPgBAZgCFqACzBfCAhAQLhiABBjHARgnGIoFGK8BwgIKECMYgAQYJxiKBcICBBAjGCfCAhYQLhiABBhDGMcBGJgFGJkFGIoFGK8BwgIKEAAYgAQYQxiKBcICBRAuGIAEwgILEAAYgAQYsQMYgwHCAggQLhiABBixA8ICHRAuGIAEGMcBGIoFGK8BGJcFGNwEGN4EGOAE2AEBwgILEAAYgAQYsQMYiwPCAhAQLhiABBhDGMcBGIoFGK8BwgILEAAYgAQYkgMYigXCAggQABiABBiLA8ICGRAuGIAEGEMYpgMYxwEYqAMYigUYiwMYrwHCAhQQLhiABBimAxjHARioAxiLAxivAcICDhAAGIAEGJIDGIoFGIsDwgIOEAAYgAQYsQMYgwEYyQPCAg4QLhiABBixAxjRAxjHAcICERAuGIAEGPgFGKgDGIsDGJ0DwgIgEC4YgAQY-AUYqAMYiwMYnQMYlwUY3AQY3gQY4ATYAQHCAg4QLhiABBioAxiLAxidA8ICGhAuGIAEGKYDGMcBGPgFGKgDGIsDGI4FGK8BwgIXEC4YgAQYpgMYxwEYqAMYiwMYjgUYrwHCAikQLhiABBimAxjHARj4BRioAxiLAxiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGKIEwgINEC4YgAQYxwEYDRivAcICBxAAGIAEGA3CAhwQLhiABBjHARgNGK8BGJcFGNwEGN4EGOAE2AEBmAMAugYGCAEQARgUkgcKNS4xNC4xLjEuMaAHlNICsgcKMC4xNC4xLjEuMbgHoBc&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KaMLxG5TkjVHMYRUTcjw9Wap&daddr=Strada+Mihai+Eminescu+17,+Vatra+Dornei+725700">Vezi locația</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Secțiunea pentru Pensiune -->
+                    <div class="location-details">
+                        <img src="images/party.gif" alt="Pensiune" class="location-image">
+                        <div class="location-info">
+                            <p><strong data-lang="partytime1">Ora: 18:00</strong></p>
+                            <p><strong data-lang="partylocation1">Locație: Pensiunea Karmina</strong></p>
+                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KdGYAX1qjjVHMRL-mSayArQB&daddr=DJ174,+%C8%98aru+Dornei">Vezi locația</a></p>
+                        </div>
+                    </div>    
+                </div>             
+            </div>
+
+            <!-- Secțiunea pentru Cununia Religioasa -->
+            <div class="location-columns"> 
+                <div class="location-box">
+                    <h3 class="location-title" data-lang="churchlocationtitle">CUNUNIA RELIGIOASĂ</h3>
+                    <h3 class="location-city">ARAD</h3>
+                    <h3 class="location-date" data-lang="churchlocationdate">25 IULIE 2026</h3>
+                
+                    <!-- Secțiunea pentru Biserica -->
+                    <div class="location-details">
+                        <img src="images/church.gif" alt="Biserică" class="location-image">
+                        <div class="location-info">
+                            <p><strong data-lang="religiousceremonytime">Ora: 16:00</strong></p>
+                            <p><strong data-lang="religiousceremonylocation">Locație: Biserica „Sf. Anton de Padova” </strong></p>
+                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=Kd2GJCP-mEVHMUhKyiiYUXnJ&daddr=Bulevardul+Revolu%C8%9Biei+96A,+Arad">Vezi locația</a></p>
+                        </div>
+                    </div>
+                
+                    <!-- Secțiunea pentru Restaurant -->
+                    <div class="location-details">
+                        <img src="images/party.gif" alt="Restaurant" class="location-image">
+                        <div class="location-info">
+                            <p><strong data-lang="partytime2">Ora: 18:00</strong></p>
+                            <p><strong data-lang="partylocation2">Locație: AvaGarden</strong></p>
+                            <p><a href="https://www.google.com/maps/dir//DJ682C,+S%C3%A2nleani+310000/@46.2182904,21.2834695,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x474597cd7ca41563:0xa440e7283643f47!2m2!1d21.36587!2d46.21832?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D">Vezi locația</a></p>
+                        </div>
+                    </div> 
+                </div>            
+            </div>
+        </div>
+
+    </section>
+
+    <!-- A doua imagine in paralaxa  -->
+    <section class="parallax-container2">
+        <img class="parallax-img2" src="images/parallax2.jpeg" alt="Imagine2"/>
+    </section> 
+
+    <!-- Sectiunea „Va asteptam cu drag!” -->
+    <div class="container-heading">
+        <h1 class="story-main-title" data-lang="story2">VĂ AȘTEPTĂM CU DRAG! </h1>
+    </div>
+
+    <!-- Sectiunea de confirmari -->
+    <section id="confirmation" class="confirmation">
+        <div class="container">
+            <iframe id="confirmation-form-ro" src="https://docs.google.com/forms/d/e/1FAIpQLSdUCIkZ17cD_d_Ya1OdO0hvScjn3iYhCxgSOz0NVmASVlNbsg/viewform?embedded=true" 
+            width="100%" 
+            height="817" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">Loading…</iframe>
+            
+            <iframe id="confirmation-form-cz" src="https://docs.google.com/forms/d/e/1FAIpQLSc0xVLfeL42njHnV8XfRMHSJ-PS0ZDbSw29natmhvO47fO0AA/viewform?embedded=true" 
+            width="100%" 
+            height="817" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            style="display:none;">Loading…</iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p id="footer-text">&copy; 2025 Ramona & Slatko - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

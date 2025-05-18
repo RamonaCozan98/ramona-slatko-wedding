@@ -1,0 +1,486 @@
+/* Resetare si stilizare generala */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header fixat */
+.header {
+    background-color: #333;
+    padding: 10px 0;
+    position: fixed; /* Fixează bara de meniu la scroll */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Bara de meniu */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color:#fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+/* Marcare buton din meniu la scroll */
+.nav-links a.active {
+    color: #fff; 
+    background-color: #ff6347;
+    border: none; 
+}
+
+/* Marcare buton la click */
+.nav-links a:hover {
+    background-color: #ff6347; 
+    color: #fff; 
+}
+
+/* Meniu mobil - ascuns implicit */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+/* Select pentru limba */
+.language-select {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    margin-top: 0;
+}
+
+/* Efect Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    margin-top: 80px; 
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    display: none; 
+}
+
+.slide.active {
+    display: flex;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Buline pentru schimbarea imaginii */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot:hover {
+    background-color: #ff6347;
+}
+
+.dot.active {
+    background-color: #ff6347;
+}
+
+/* Sectiunea „Povestea noastra” */
+.story {
+    background-color: #fff;
+    padding: 40px 0px;
+    text-align: center;
+    margin-bottom: 0; 
+}
+
+.story-box {
+    width: 900px;
+    height: 377px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px dotted #333; 
+    font-family: 'Palatino Linotype', serif;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.story-heading {
+    color: #808080; 
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.story-main-title {
+    color: #000; 
+    font-size: 48px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.story-text {
+    color: #000; 
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.story h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.story p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Imaginile in paralaxa */
+.parallax-container,
+.parallax-container2 {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    margin-top: 0; 
+    padding: 0; 
+}
+
+.parallax-img,
+.parallax-img2 {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: auto;  
+    object-fit: cover;  
+}
+
+/* Sectiunea „When & Where” */
+.when-where { 
+    background-color: #fff;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 0; 
+   
+}
+
+.container-location {
+    width: 75%;
+    height: 370px;
+    margin: 0 auto 40px auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+ }
+  
+ /* Linie intre coloane */
+.container-location::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: black;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.container-heading {
+    font-family: 'Palatino Linotype', serif;
+    color: #000;
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+  
+  .location-columns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* pentru mobil */
+  }
+  
+  .location-box {
+    width: 500px;
+    font-family: 'Palatino Linotype', serif;
+    text-align: center;
+  }
+
+.location-title {
+    color: #000;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.location-city {
+    color: #808080; 
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.location-date {
+    color: #000; 
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 40px; 
+}
+
+.location-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Palatino Linotype', serif;
+    text-align: center;
+}
+
+.location-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.location-info {
+    text-align: center;
+    font-family: 'Palatino Linotype', serif;
+    font-size: 18px;
+    padding: 20px;
+}
+
+.location-info a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.location-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* Seciunea Confirmare */
+.confirmation {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Palatino Linotype', serif;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.confirmation form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Design pentru mobil */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .language-select {
+        margin-top: 10px;
+    }
+
+    .slider {
+        height: 400px;
+    }
+
+    .story-box {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .story-main-title {
+        font-size: 32px;
+    }
+
+    .story-text {
+        font-size: 14px;
+    }
+
+    .container-location {
+        flex-direction: column;
+        height:auto;
+    }
+
+    .container-location::before {
+        display: none;
+    }
+
+    .image-container img {
+        object-fit: cover;
+    }
+
+    .parallax-img,
+    .parallax-img2 {
+        display: none;
+        height: 300px; 
+    }
+
+    .parallax-container{
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll !important;
+        background-image: url("images/parallax1.jpeg");
+        height: 300px;
+    }
+
+    .parallax-container2 {
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll !important;
+        background-image: url("images/parallax2.jpeg");
+        height: 300px;
+    }
+
+    .location-box {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .location-info {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .story-main-title,
+    .container-heading {
+        font-size: 20px;
+    }
+
+    .location-title,
+    .location-date {
+        font-size: 18px;
+    }
+
+    .rsvp {
+        font-size: 16px;
+    }
+
+    .rsvp form {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.mobile-only {
+    display: none;
+}
