@@ -429,10 +429,15 @@ body {
         object-fit: cover;
     }
 
+    @media (max-width: 768px) {
     .parallax-img,
     .parallax-img2 {
-        display: none;
-        height: 300px; 
+        display: block;        /* le arată pe mobil */
+        height: 300px;
+        background-attachment: scroll; /* dezactivează parallax */
+        background-position: center;
+        background-size: cover;
+        }
     }
 
     .parallax-container{
