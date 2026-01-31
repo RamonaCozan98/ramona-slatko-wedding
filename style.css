@@ -84,6 +84,7 @@ body {
     border: none;
     padding: 5px;
     margin-top: 0;
+    display: inline-flex;
 }
 
 /* Efect Slider */
@@ -345,7 +346,6 @@ body {
 
 /* Seciunea Confirmare */
 .confirmation {
-    background-color: #fff;
     padding: 40px 20px;
     text-align: center;
     font-family: 'Palatino Linotype', serif;
@@ -353,11 +353,17 @@ body {
     margin-top: 0;
 }
 
-.confirmation form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.confirmation .container {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation iframe {
+  width: 50%;
+  max-width: 900px;
+  min-width: 100px;
+  height: 1200px;
+  border: none;
 }
 
 /* Footer */
@@ -376,7 +382,20 @@ body {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+    .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
     }
 
     .nav-links {
@@ -398,7 +417,9 @@ body {
     }
 
     .language-select {
-        margin-top: 10px;
+        display: inline-flex;
+        width: auto;
+        margin-top: 4px;
     }
 
     .slider {
@@ -469,10 +490,8 @@ body {
         font-size: 16px;
     }
 
-    .rsvp form {
-        width: 100%;
-        padding: 0 20px;
-    }
+    .confirmation .container { padding: 0; }
+    .confirmation iframe { width: 100%; height: 1350px}
 }
 
 .mobile-only {

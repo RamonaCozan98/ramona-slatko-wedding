@@ -5,22 +5,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const langSelect = document.getElementById("language-select");
     const formRo = document.getElementById('confirmation-form-ro');
     const formCz = document.getElementById('confirmation-form-cz');
+    const formDe = document.getElementById("confirmation-form-de");
     const elements = document.querySelectorAll("[data-lang]");
   
     // Traducerea site-ului
     const translations = {
       ro: {},
       cz: {
-        paragraph1: "Kdysi dávno žili dva cizí lidé, každý s vlastními sny, ale nějakým způsobem jim bylo souzeno se setkat. Co začalo jako jednoduché rozhovory, se změnilo v smích, příběhy a rostoucí pouto, které jsem nemohla ignorovat.",
-        paragraph2: "Jak se měnila roční období, měnili jsme se i my – nacházeli jsme sílu ve vzájemné laskavosti a den za dnem jsme se stále více zamilovávali. Prostřednictvím každého úspěchu a každé výzvy jsem zjistil/a, že pravá láska znamená podporu, trpělivost a radost z prožívání jednoduchých společných chvil.",
-        paragraph3: "S velkou láskou vás zveme, abyste se stali součástí našeho příběhu a prožili s námi ty nejvýjimečnější okamžiky našich životů! ❤️",
-        storyheading: "SPOLU UŽ 4 ROKY",
+        paragraph1: "Byli jednou dva cizinci, každý se svými sny, a přesto předurčeni k tomu, aby se jejich cesty setkaly. Z obyčejných rozhovorů se zrodil smích, porozumění a láska, která s každým dnem sílila.",
+        paragraph2: "Jak se měnila roční období, měnili jsme se i my – nacházeli jsme sílu ve vzájemné laskavosti a den za dnem jsme se stále více zamilovávali. Společně jsme objevili, že pravá láska znamená podporu, trpělivost a radost ze sdílených okamžiků.",
+        paragraph3: "S láskou vás zveme, abyste byli součástí našeho příběhu a prožili s námi jeden z nejdůležitějších dnů našeho života! ❤️",
+        storyheading: "SPOLU JIŽ 4 ROKY",
         storymaintitle: "DVĚ SPŘÍZNĚNÉ DUŠE",
         storymaintitle2: "OSLAVÍME NAŠI LÁSKU",
         locationtitlecivileceremony: "OBČANSKÉ MANŽELSTVÍ",
         civileceremonydate: "06 ČERVEN 2026",
         civilceremonytime: "Čas: 16:00",
         civilceremonylocation: "Místo: Radnice Vatra Dornei",
+        seeLocation: "Zobrazit polohu",
         partytime1: "Čas: 18:00",
         partylocation1: "Místo: Penzion Karmina",
         churchlocationtitle: "NÁBOŽENSKÁ SVATBA",
@@ -30,6 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
         partytime2: "Čas: 18:00",
         partylocation2: "Místo: AvaGarden",
         story2: "TĚŠÍME SE NA VÁS!"
+      },
+      de: { // NOU
+      paragraph1: "Es waren einmal zwei Fremde, jeder mit seinen eigenen Träumen, und doch dazu bestimmt, dass sich ihre Wege kreuzen. Was als einfache Gespräche begann, wurde zu Lachen, Geschichten und einer immer stärkeren Verbindung, die wir nicht ignorieren konnten.",
+      paragraph2: "Mit jedem Erfolg und jeder Herausforderung entdeckten wir, dass wahre Liebe Unterstützung, Geduld und die Freude an den gemeinsam erlebten, einfachen Momenten bedeutet.",
+      paragraph3: "Mit viel Liebe laden wir euch ein, Teil unserer Geschichte zu sein und gemeinsam mit uns einen der schönsten Tage unseres Lebens zu feiern! ❤️",
+      storyheading: "SEIT 4 JAHREN ZUSAMMEN",
+      storymaintitle: "ZWEI SEELENVERWANDTE",
+      storymaintitle2: "WIR FEIERN UNSERE LIEBE",
+      locationtitlecivileceremony: "STANDESAMTLICHE TRAUUNG",
+      civileceremonydate: "06 JUNI 2026",
+      civilceremonytime: "Uhrzeit: 16:00",
+      civilceremonylocation: "Ort: Rathaus Vatra Dornei",
+      seeLocation: "Standort anzeigen",
+      partytime1: "Uhrzeit: 18:00",
+      partylocation1: "Ort: Pension Karmina",
+      churchlocationtitle: "KIRCHLICHE TRAUUNG",
+      churchlocationdate: "25 JULI 2026",
+      religiousceremonytime: "Uhrzeit: 16:00",
+      religiousceremonylocation: "Ort: Kirche „Sf. Anton de Padova”",
+      partytime2: "Uhrzeit: 18:00",
+      partylocation2: "Ort: AvaGarden",
+      story2: "WIR FREUEN UNS AUF EUCH!"
       }
     };
   
@@ -60,9 +84,15 @@ document.addEventListener("DOMContentLoaded", function () {
       if (lang === 'ro') {
         formRo.style.display = 'block';
         formCz.style.display = 'none';
+        formDe.style.display = 'none';
       } else if (lang === 'cz') {
         formRo.style.display = 'none';
+        formDe.style.display = 'none';
         formCz.style.display = 'block';
+      }else if (lang === 'de') {
+        formRo.style.display = 'none';
+        formCz.style.display = 'none';
+        formDe.style.display = 'block';
       }
     }
   
