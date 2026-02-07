@@ -8,6 +8,15 @@
 </head>
 <body>
 
+    <div id="language-overlay">
+        <div class="language-box">
+        <h2>Alege limba / Choose language</h2>
+        <button class="lang-btn" data-lang="ro">Română</button>
+        <button class="lang-btn" data-lang="cz">Čeština</button>
+        <button class="lang-btn" data-lang="de">Deutsch</button>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
@@ -28,6 +37,7 @@
             <select class="language-select" id="language-select">
                 <option value="ro">Română</option>
                 <option value="cz">Čeština</option>
+                <option value="de">Deutsch</option>
             </select>
         </nav>
     </header>
@@ -116,7 +126,7 @@
                         <div class="location-info">
                             <p><strong data-lang="civilceremonytime">Ora: 16:00</strong></p>
                             <p><strong data-lang="civilceremonylocation">Locație: Primăria Vatra Dornei</strong></p>
-                            <p><a href="https://www.google.com/maps?sca_esv=6a2c331ba288be79&rlz=1C1GCEA_enRO971RO971&sxsrf=AHTn8zpHoVRj7rCF6wCuAo6it9SrkCU0vg:1744546780815&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5wcmltYXJpYSB2YXRyYSoCCAAyCxAuGIAEGMcBGK8BMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUiqK1AAWMMjcAV4AZABAJgBlQOgAYQWqgEKMC4xNC4xLjEuMbgBA8gBAPgBAZgCFqACzBfCAhAQLhiABBjHARgnGIoFGK8BwgIKECMYgAQYJxiKBcICBBAjGCfCAhYQLhiABBhDGMcBGJgFGJkFGIoFGK8BwgIKEAAYgAQYQxiKBcICBRAuGIAEwgILEAAYgAQYsQMYgwHCAggQLhiABBixA8ICHRAuGIAEGMcBGIoFGK8BGJcFGNwEGN4EGOAE2AEBwgILEAAYgAQYsQMYiwPCAhAQLhiABBhDGMcBGIoFGK8BwgILEAAYgAQYkgMYigXCAggQABiABBiLA8ICGRAuGIAEGEMYpgMYxwEYqAMYigUYiwMYrwHCAhQQLhiABBimAxjHARioAxiLAxivAcICDhAAGIAEGJIDGIoFGIsDwgIOEAAYgAQYsQMYgwEYyQPCAg4QLhiABBixAxjRAxjHAcICERAuGIAEGPgFGKgDGIsDGJ0DwgIgEC4YgAQY-AUYqAMYiwMYnQMYlwUY3AQY3gQY4ATYAQHCAg4QLhiABBioAxiLAxidA8ICGhAuGIAEGKYDGMcBGPgFGKgDGIsDGI4FGK8BwgIXEC4YgAQYpgMYxwEYqAMYiwMYjgUYrwHCAikQLhiABBimAxjHARj4BRioAxiLAxiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGKIEwgINEC4YgAQYxwEYDRivAcICBxAAGIAEGA3CAhwQLhiABBjHARgNGK8BGJcFGNwEGN4EGOAE2AEBmAMAugYGCAEQARgUkgcKNS4xNC4xLjEuMaAHlNICsgcKMC4xNC4xLjEuMbgHoBc&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KaMLxG5TkjVHMYRUTcjw9Wap&daddr=Strada+Mihai+Eminescu+17,+Vatra+Dornei+725700">Vezi locația</a></p>
+                            <p><a href="https://www.google.com/maps?sca_esv=6a2c331ba288be79&rlz=1C1GCEA_enRO971RO971&sxsrf=AHTn8zpHoVRj7rCF6wCuAo6it9SrkCU0vg:1744546780815&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIg5wcmltYXJpYSB2YXRyYSoCCAAyCxAuGIAEGMcBGK8BMgsQLhiABBjHARivATIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUiqK1AAWMMjcAV4AZABAJgBlQOgAYQWqgEKMC4xNC4xLjEuMbgBA8gBAPgBAZgCFqACzBfCAhAQLhiABBjHARgnGIoFGK8BwgIKECMYgAQYJxiKBcICBBAjGCfCAhYQLhiABBhDGMcBGJgFGJkFGIoFGK8BwgIKEAAYgAQYQxiKBcICBRAuGIAEwgILEAAYgAQYsQMYgwHCAggQLhiABBixA8ICHRAuGIAEGMcBGIoFGK8BGJcFGNwEGN4EGOAE2AEBwgILEAAYgAQYsQMYiwPCAhAQLhiABBhDGMcBGIoFGK8BwgILEAAYgAQYkgMYigXCAggQABiABBiLA8ICGRAuGIAEGEMYpgMYxwEYqAMYigUYiwMYrwHCAhQQLhiABBimAxjHARioAxiLAxivAcICDhAAGIAEGJIDGIoFGIsDwgIOEAAYgAQYsQMYgwEYyQPCAg4QLhiABBixAxjRAxjHAcICERAuGIAEGPgFGKgDGIsDGJ0DwgIgEC4YgAQY-AUYqAMYiwMYnQMYlwUY3AQY3gQY4ATYAQHCAg4QLhiABBioAxiLAxidA8ICGhAuGIAEGKYDGMcBGPgFGKgDGIsDGI4FGK8BwgIXEC4YgAQYpgMYxwEYqAMYiwMYjgUYrwHCAikQLhiABBimAxjHARj4BRioAxiLAxiOBRivARiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGKIEwgINEC4YgAQYxwEYDRivAcICBxAAGIAEGA3CAhwQLhiABBjHARgNGK8BGJcFGNwEGN4EGOAE2AEBmAMAugYGCAEQARgUkgcKNS4xNC4xLjEuMaAHlNICsgcKMC4xNC4xLjEuMbgHoBc&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KaMLxG5TkjVHMYRUTcjw9Wap&daddr=Strada+Mihai+Eminescu+17,+Vatra+Dornei+725700"><span data-lang="seeLocation">Vezi locația</span></a></p>
                         </div>
                     </div>
 
@@ -126,7 +136,7 @@
                         <div class="location-info">
                             <p><strong data-lang="partytime1">Ora: 18:00</strong></p>
                             <p><strong data-lang="partylocation1">Locație: Pensiunea Karmina</strong></p>
-                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KdGYAX1qjjVHMRL-mSayArQB&daddr=DJ174,+%C8%98aru+Dornei">Vezi locația</a></p>
+                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=KdGYAX1qjjVHMRL-mSayArQB&daddr=DJ174,+%C8%98aru+Dornei"><span data-lang="seeLocation">Vezi locația</span></a></p>
                         </div>
                     </div>    
                 </div>             
@@ -145,7 +155,7 @@
                         <div class="location-info">
                             <p><strong data-lang="religiousceremonytime">Ora: 16:00</strong></p>
                             <p><strong data-lang="religiousceremonylocation">Locație: Biserica „Sf. Anton de Padova” </strong></p>
-                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=Kd2GJCP-mEVHMUhKyiiYUXnJ&daddr=Bulevardul+Revolu%C8%9Biei+96A,+Arad">Vezi locația</a></p>
+                            <p><a href="https://www.google.com/maps?rlz=1C1GCEA_enRO971RO971&um=1&ie=UTF-8&fb=1&gl=ro&sa=X&geocode=Kd2GJCP-mEVHMUhKyiiYUXnJ&daddr=Bulevardul+Revolu%C8%9Biei+96A,+Arad"><span data-lang="seeLocation">Vezi locația</span></a></p>
                         </div>
                     </div>
                 
@@ -155,7 +165,7 @@
                         <div class="location-info">
                             <p><strong data-lang="partytime2">Ora: 18:00</strong></p>
                             <p><strong data-lang="partylocation2">Locație: AvaGarden</strong></p>
-                            <p><a href="https://www.google.com/maps/dir//DJ682C,+S%C3%A2nleani+310000/@46.2182904,21.2834695,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x474597cd7ca41563:0xa440e7283643f47!2m2!1d21.36587!2d46.21832?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D">Vezi locația</a></p>
+                            <p><a href="https://www.google.com/maps/dir//DJ682C,+S%C3%A2nleani+310000/@46.2182904,21.2834695,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x474597cd7ca41563:0xa440e7283643f47!2m2!1d21.36587!2d46.21832?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D"><span data-lang="seeLocation">Vezi locația</span></a></p>
                         </div>
                     </div> 
                 </div>            
@@ -177,20 +187,23 @@
     <!-- Sectiunea de confirmari -->
     <section id="confirmation" class="confirmation">
         <div class="container">
-            <iframe id="confirmation-form-ro" src="https://docs.google.com/forms/d/e/1FAIpQLSdUCIkZ17cD_d_Ya1OdO0hvScjn3iYhCxgSOz0NVmASVlNbsg/viewform?embedded=true" 
-            width="100%" 
-            height="817" 
+            <iframe id="confirmation-form-ro" src="https://forms.gle/hQDpBnt7dTKgbMT6A" 
             frameborder="0" 
             marginheight="0" 
             marginwidth="0">Loading…</iframe>
             
-            <iframe id="confirmation-form-cz" src="https://docs.google.com/forms/d/e/1FAIpQLSc0xVLfeL42njHnV8XfRMHSJ-PS0ZDbSw29natmhvO47fO0AA/viewform?embedded=true" 
-            width="100%" 
-            height="817" 
+            <iframe id="confirmation-form-cz" src="https://forms.gle/9YtHR8FUiXe2gj9s9" 
             frameborder="0" 
             marginheight="0" 
             marginwidth="0" 
             style="display:none;">Loading…</iframe>
+
+            <iframe id="confirmation-form-de" src="https://forms.gle/jkUv5LGDz4yw3jry7" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0" 
+            style="display:none;">
+            Loading…</iframe>
         </div>
     </section>
 

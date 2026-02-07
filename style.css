@@ -11,6 +11,93 @@ body {
     color: #333;
 }
 
+#language-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 24px; 
+}
+
+.language-box {
+  width: min(420px, 100%);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 26px 22px;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.language-box h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  line-height: 1.3;
+  color: #222;
+}
+
+.language-box button {
+    margin: 10px;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Butoanele: întotdeauna unul sub altul (laptop + telefon) */
+.language-box .lang-btn {
+  display: block;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+/* Hover (desktop) */
+.language-box .lang-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+  border-color: rgba(0,0,0,0.20);
+}
+
+/* Focus (accesibilitate / tastatură) */
+.language-box .lang-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.12);
+}
+
+/* Apăsare (mobil) */
+.language-box .lang-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+
+/* mic rafinament pe ecrane mici */
+@media (max-width: 480px) {
+  .language-box {
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+  .language-box h2 {
+    font-size: 17px;
+  }
+  .language-box .lang-btn {
+    padding: 14px 14px;
+    border-radius: 12px;
+  }
+}
+
 /* Header fixat */
 .header {
     background-color: #333;
@@ -84,6 +171,7 @@ body {
     border: none;
     padding: 5px;
     margin-top: 0;
+    display: inline-flex;
 }
 
 /* Efect Slider */
@@ -345,7 +433,6 @@ body {
 
 /* Seciunea Confirmare */
 .confirmation {
-    background-color: #fff;
     padding: 40px 20px;
     text-align: center;
     font-family: 'Palatino Linotype', serif;
@@ -353,11 +440,17 @@ body {
     margin-top: 0;
 }
 
-.confirmation form {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.confirmation .container {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation iframe {
+  width: 50%;
+  max-width: 900px;
+  min-width: 100px;
+  height: 1200px;
+  border: none;
 }
 
 /* Footer */
@@ -376,7 +469,34 @@ body {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+    }
+
+    .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+     .language-box {
+        width: 90%;
+        padding: 25px 15px;
+    }
+
+    .language-box h2 {
+        font-size: 18px;
+    }
+
+    .language-box button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .menu-toggle {
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
     }
 
     .nav-links {
@@ -398,7 +518,9 @@ body {
     }
 
     .language-select {
-        margin-top: 10px;
+        display: inline-flex;
+        width: auto;
+        margin-top: 4px;
     }
 
     .slider {
@@ -469,10 +591,8 @@ body {
         font-size: 16px;
     }
 
-    .rsvp form {
-        width: 100%;
-        padding: 0 20px;
-    }
+    .confirmation .container { padding: 0; }
+    .confirmation iframe { width: 100%; height: 1350px}
 }
 
 .mobile-only {
