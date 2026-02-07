@@ -1,16 +1,15 @@
 // =====================================================
-// script.js — versiune completă (overlay limbă la fiecare deschidere,
-// traduceri + formulare, meniu mobil, paralax, highlight meniu, slider)
+// script.js — versiune curată (FĂRĂ DUPLICĂRI)
+// - Overlay limbă: apare la fiecare deschidere
+// - Traduceri + formulare
+// - Meniu mobil
+// - Paralax + highlight meniu
+// - Slider funcțional cu currentSlide(0..N-1) din HTML
 // =====================================================
 
-// IMPORTANT:
-// - NU folosim localStorage -> overlay apare de fiecare dată.
-// - currentSlide() rămâne global pentru onclick-urile din HTML.
-// - Codul e defensiv: dacă lipsește un element, nu “omoară” restul scriptului.
-
-// -----------------------------------------------------
-// 0) Slider (global) — ca să existe currentSlide() pentru HTML
-// -----------------------------------------------------
+// ------------------------------
+// SLIDER (GLOBAL) - necesar pentru onclick din HTML
+// ------------------------------
 let slideIndex = 1;
 
 function showSlides(n) {
@@ -20,27 +19,29 @@ function showSlides(n) {
   if (n > slides.length) slideIndex = 1;
   if (n < 1) slideIndex = slides.length;
 
-  slides.forEach((slide) => (slide.style.display = "none"));
+  slides.forEach((s) => (s.style.display = "none"));
   slides[slideIndex - 1].style.display = "block";
 }
 
-// HTML-ul tău cheamă currentSlide(0..4)
+// HTML-ul tău cheamă currentSlide(0..4) => convertim la 1..N
 function currentSlide(n) {
-  showSlides((slideIndex = n + 1));
+  slideIndex = n + 1;
+  showSlides(slideIndex);
 }
 
-// Autoplay slider
+// Autoplay
 setInterval(() => {
   slideIndex++;
   showSlides(slideIndex);
 }, 5500);
 
-// Inițializare slider după încărcare
+// Init slider
 document.addEventListener("DOMContentLoaded", () => showSlides(slideIndex));
 
-// -----------------------------------------------------
-// 1) UI + traduceri + overlay + meniu mobil
-// -----------------------------------------------------
+
+// ------------------------------
+// UI + TRADUCERI + OVERLAY + MENIU MOBIL
+// ------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const langSelect = document.getElementById("language-select");
   const elements = document.querySelectorAll("[data-lang]");
@@ -52,12 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById("language-overlay");
   const langButtons = document.querySelectorAll(".lang-btn");
 
-  // Dacă nu există selector de limbă sau elemente data-lang, ieșim fără să stricăm restul
+  // Defensive
   if (!langSelect || !elements.length) return;
 
-  // ------------------------------
   // Traduceri
-  // ------------------------------
   const translations = {
     ro: {},
     cz: {
@@ -112,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Salvează textul original RO din HTML (important ca să poți reveni corect)
+  // Salvează textul RO original
   elements.forEach((el) => {
     const key = el.getAttribute("data-lang");
     translations.ro[key] = el.textContent.trim();
@@ -121,17 +120,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function applyTranslation(lang) {
     elements.forEach((el) => {
       const key = el.getAttribute("data-lang");
-      const tr = translations[lang] && translations[lang][key];
-
       if (lang === "ro") {
-        // revenim la original
         if (translations.ro[key] != null) el.textContent = translations.ro[key];
       } else {
-        // setăm traducerea dacă există; dacă nu există, păstrăm textul curent
+        const tr = translations[lang] && translations[lang][key];
         if (tr) el.textContent = tr;
       }
     });
-
     document.documentElement.lang = lang;
   }
 
@@ -149,11 +144,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateForm(lang);
   }
 
-  // Dropdown din navbar
+  // Dropdown limbă
   langSelect.addEventListener("change", function () {
     applyLanguageAndUI(this.value);
-
-    // dacă overlay e vizibil și user a ales din dropdown, îl închidem
     if (overlay) {
       overlay.style.display = "none";
       document.body.classList.remove("modal-open");
@@ -169,21 +162,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Overlay: click pe butoane
+  // Overlay butoane
   if (overlay && langButtons.length) {
     langButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const lang = btn.dataset.lang;
         applyLanguageAndUI(lang);
-
         overlay.style.display = "none";
         document.body.classList.remove("modal-open");
       });
     });
   }
 
-  // IMPORTANT: la fiecare deschidere, arătăm overlay-ul (user trebuie să aleagă)
-  // Inițializăm pagina în RO (ca bază), apoi cerem alegerea.
+  // Forțăm overlay la fiecare deschidere
   applyLanguageAndUI("ro");
   if (overlay) {
     overlay.style.display = "flex";
@@ -191,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// iOS / WhatsApp / Messenger: pagina poate reveni din cache fără DOMContentLoaded
+// iOS cache fix
 window.addEventListener("pageshow", () => {
   const overlay = document.getElementById("language-overlay");
   if (overlay) {
@@ -200,13 +191,14 @@ window.addEventListener("pageshow", () => {
   }
 });
 
-// -----------------------------------------------------
-// 2) Scroll: paralax + evidențiere meniu
-// -----------------------------------------------------
+
+// ------------------------------
+// PARALAX + HIGHLIGHT MENIU
+// ------------------------------
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
 
-  // Paralax 1: imaginea din .parallax-container (clasa ta: .parallax-img)
+  // Paralax 1
   const img1 = document.querySelector(".parallax-img");
   const storySection = document.querySelector(".story");
   if (img1 && storySection) {
@@ -218,7 +210,7 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  // Paralax 2: imaginea din .parallax-container2 (clasa ta: .parallax-img2)
+  // Paralax 2
   const img2 = document.querySelector(".parallax-img2");
   const wwSection = document.querySelector(".when-where");
   if (img2 && wwSection) {
@@ -230,7 +222,7 @@ window.addEventListener("scroll", () => {
     }
   }
 
-  // Highlight meniu (secțiunea curentă)
+  // Highlight meniu
   let current = "";
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-links a");
