@@ -75,13 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
       civilceremonylocation: "Místo: Radnice Vatra Dornei",
       seeLocation: "Zobrazit polohu",
       partytime1: "Čas: 18:00",
-      partylocation1: "Místo: Penzion Karmina",
+      partylocation1: "Místo: Eventová hala Salon du Parc",
       churchlocationtitle: "NÁBOŽENSKÁ SVATBA",
       churchlocationdate: "25 ČERVENEC 2026",
       religiousceremonytime: "Čas: 16:00",
-      religiousceremonylocation: "Místo: Kostel „Sf. Anton de Padova”",
+      religiousceremonylocation: "Místo: Katedrála „Sf. Anton de Padova”",
       partytime2: "Čas: 18:00",
-      partylocation2: "Místo: AvaGarden",
+      partylocation2: "Místo: Eventová hala AvaGarden",
       story2: "TĚŠÍME SE NA VÁS!"
     },
     de: {
@@ -100,13 +100,13 @@ document.addEventListener("DOMContentLoaded", function () {
       civilceremonylocation: "Ort: Rathaus Vatra Dornei",
       seeLocation: "Standort anzeigen",
       partytime1: "Uhrzeit: 18:00",
-      partylocation1: "Ort: Pension Karmina",
+      partylocation1: "Ort: Eventhalle Salon du Parc",
       churchlocationtitle: "KIRCHLICHE TRAUUNG",
       churchlocationdate: "25 JULI 2026",
       religiousceremonytime: "Uhrzeit: 16:00",
-      religiousceremonylocation: "Ort: Kirche „Sf. Anton de Padova”",
+      religiousceremonylocation: "Ort: Kathedrale „Sf. Anton de Padova”",
       partytime2: "Uhrzeit: 18:00",
-      partylocation2: "Ort: AvaGarden",
+      partylocation2: "Ort: Eventhalle AvaGarden",
       story2: "WIR FREUEN UNS AUF EUCH!"
     }
   };
