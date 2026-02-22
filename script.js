@@ -183,7 +183,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // iOS cache fix
-window.addEventListener("pageshow", () => {
+window.addEventListener("pageshow", (e) => {
+  // Rulează doar când pagina e restaurată din bfcache (Safari/iOS)
+  if (!e.persisted) return;
+
   const overlay = document.getElementById("language-overlay");
   if (overlay) {
     overlay.style.display = "flex";
